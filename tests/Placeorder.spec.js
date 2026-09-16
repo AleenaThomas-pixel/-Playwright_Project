@@ -2,9 +2,9 @@
 import {expect} from "@playwright/test"
 import {LoginPage} from "../pages/loginpage"
 import { PlaceOrder } from "../pages/placeorderpage"
-import {test} from '../utils/fixture.js'
+import test from "../utils/fixture.js"
 
-const vdata = require("../utils/validcredentials.json")
+import vdata from "../utils/validcredentials.json" with {type: "json"}
 
 test('Product - Laptop purchase ',{timeout:30000},async({customfixture})=>
 {
@@ -19,7 +19,7 @@ test('Product - Laptop purchase ',{timeout:30000},async({customfixture})=>
    await pOrder.selectcategoryLaptop()
    await pOrder.selectproductnameLaptap()
 
-   page.once('dialog',async dialog=>
+   customfixture.once('dialog',async dialog=>
     {
         console.log(dialog.message())
         await expect(dialog.message()).toContain("Product added")   //assertion

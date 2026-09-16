@@ -2,7 +2,7 @@ import{test,expect} from "@playwright/test"
 import { faker } from "@faker-js/faker"
 import { SignUp } from "../pages/SignUpPage"
 
-const data = require("../utils/signupcredentials.json")
+import data from "../utils/signupcredentials.json" with {type:"json"}
 
 test('Sign Up - Click Sign up button ', async({page})=>
 {

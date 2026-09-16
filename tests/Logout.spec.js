@@ -2,7 +2,7 @@ import{test,expect} from "@playwright/test"
 import { LoginPage } from "../pages/loginpage"
 import { LogOutPage } from "../pages/logoutpage"
 
-const vdata = require("../utils/validcredentials.json")
+import vdata from "../utils/validcredentials.json" with {type: "json"}
 
 test('LogOut', async({page})=>
 {

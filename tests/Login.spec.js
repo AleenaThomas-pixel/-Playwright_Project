@@ -1,8 +1,8 @@
 import{test,expect} from "@playwright/test"
-
 import { LoginPage } from "../pages/loginpage"
-const vdata = require("../utils/validcredentials.json")
-const dataset = require("../utils/invalidcredentials.json")
+
+import vdata from "../utils/validcredentials.json" with {type: "json"}
+import dataset from "../utils/invalidcredentials.json" with {type: "json"}
 
 test('Valid Login', async({page})=>
 {
