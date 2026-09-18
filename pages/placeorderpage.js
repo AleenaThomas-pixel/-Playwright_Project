@@ -82,6 +82,7 @@
         if(await Deletebtn.count()>0)
         {
             await Deletebtn.first().click()
+            await this.page.waitForTimeout(500)
         }
         await this.page.getByText('PRODUCT STORE').click()
         return this

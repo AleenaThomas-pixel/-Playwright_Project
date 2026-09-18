@@ -30,17 +30,17 @@ test('Product - Laptop purchase ',{timeout:30000},async({customfixture})=>
 
 })
 
-test('Product - Phones purchase ',{timeout:30000},async({page})=>
+test.only('Product - Phones purchase ',{timeout:30000},async({page})=>
 {
 
    let loginpge = new LoginPage(page)
    await loginpge.accessurl()
    await loginpge.login()
+   await pOrder.clearcart()
    await loginpge.loginusername(vdata.username)
    await loginpge.loginpassword(vdata.password)
    const pOrder = await loginpge.loginbutton() 
 
-   await pOrder.clearcart()
    await pOrder.selectcategoryPhone()
    await pOrder.selectproductnamePhones()
 
@@ -69,12 +69,12 @@ test('Product - Monitors purchase ',{timeout:30000},async({page})=>
 
   let loginpge = new LoginPage(page)
    await loginpge.accessurl()
+   await pOrder.clearcart()
    await loginpge.login()
    await loginpge.loginusername(vdata.username)
    await loginpge.loginpassword(vdata.password)
    const pOrder = await loginpge.loginbutton() 
 
-   await pOrder.clearcart()
    await pOrder.selectcategoryMonitors()
    await pOrder.selectproductnameMonitors()
 
