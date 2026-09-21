@@ -6,6 +6,7 @@ import test from "../utils/fixture.js"
 
 import vdata from "../utils/validcredentials.json" with {type: "json"}
 
+//Test7
 test('Product - Laptop purchase ',{timeout:30000},async({customfixture})=>
 {
 
@@ -30,17 +31,18 @@ test('Product - Laptop purchase ',{timeout:30000},async({customfixture})=>
 
 })
 
-test.only('Product - Phones purchase ',{timeout:30000},async({page})=>
+//Test8
+test('Product - Phones purchase ',{timeout:30000},async({page})=>
 {
 
    let loginpge = new LoginPage(page)
    await loginpge.accessurl()
    await loginpge.login()
-   await pOrder.clearcart()
    await loginpge.loginusername(vdata.username)
    await loginpge.loginpassword(vdata.password)
    const pOrder = await loginpge.loginbutton() 
-
+   
+   await pOrder.clearcart()
    await pOrder.selectcategoryPhone()
    await pOrder.selectproductnamePhones()
 
@@ -54,7 +56,6 @@ test.only('Product - Phones purchase ',{timeout:30000},async({page})=>
    await pOrder.addtocartbutton()
    await pOrder.cart()
    await pOrder.placeorderbutton()
-   //await page.waitForTimeout(50000)
    await pOrder.purchasedetails("Aloshy","India","Gurgaon","2221-XXXX-XXXX","OCT","2026")
    await pOrder.purchaseorderbutton()
 
@@ -64,19 +65,24 @@ test.only('Product - Phones purchase ',{timeout:30000},async({page})=>
 
 })
 
+//Test9
 test('Product - Monitors purchase ',{timeout:30000},async({page})=>
 {
 
   let loginpge = new LoginPage(page)
    await loginpge.accessurl()
-   await pOrder.clearcart()
    await loginpge.login()
    await loginpge.loginusername(vdata.username)
    await loginpge.loginpassword(vdata.password)
    const pOrder = await loginpge.loginbutton() 
+   await page.pause()
 
+   await pOrder.clearcart()
+   await page.pause()
    await pOrder.selectcategoryMonitors()
+   await page.pause()
    await pOrder.selectproductnameMonitors()
+   await page.pause()
 
    page.once('dialog',async dialog=>
     {
@@ -85,12 +91,18 @@ test('Product - Monitors purchase ',{timeout:30000},async({page})=>
         await dialog.accept()
     }
     )
+   await page.pause()
    await pOrder.addtocartbutton()
+   await page.pause()
    await pOrder.cart()
+   await page.pause()
    await pOrder.placeorderbutton()
+   await page.pause()
    //await page.waitForTimeout(40000)
    await pOrder.purchasedetails("Aloshy","India","Gurgaon","2221-XXXX-XXXX","OCT","2026")
+   await page.pause()
    await pOrder.purchaseorderbutton()   
+   await page.pause()
 
    await expect(page.locator('#nava')).toHaveText("PRODUCT STORE")  //assertion
    await pOrder.okbutton()

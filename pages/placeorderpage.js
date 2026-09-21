@@ -23,10 +23,16 @@
         this.purchseyr = page.locator('#year')
         this.purchasebtn = page.locator("//button[text()='Purchase']")
         this.okbtn = page.locator("//button[text()='OK']")
+        this.placeordermodal = page.locator('#orderModal')
 
     }
 
-
+    /*async selectproduct(product)
+   {
+    await this.page.locator(`//a[text()="${product}"]`).click();
+    return this
+   }   
+  */ 
     async selectcategoryLaptop()
     {
        await this.categoryLaptop.click()
@@ -50,9 +56,11 @@
        await this.prdctnamePhone.click() 
        return this
     }
+
     async selectcategoryMonitors()
     {
        await this.categoryMonitors.click()
+       await this.prdctnameMonitor.waitFor({state: 'visible'})
        return this
     }
 
@@ -79,7 +87,7 @@
     {
         await this.cart()
         const Deletebtn = this.page.locator("//a[text() = 'Delete']")
-        if(await Deletebtn.count()>0)
+        while(await Deletebtn.count()>0)
         {
             await Deletebtn.first().click()
             await this.page.waitForTimeout(500)
@@ -91,6 +99,7 @@
     async placeorderbutton()
     {
         await this.placeorderbtn.click()
+        await this.placeordermodal.waitFor({ state: 'visible' })
         return this
     }
 
@@ -120,3 +129,4 @@
         return this
     }
 }
+

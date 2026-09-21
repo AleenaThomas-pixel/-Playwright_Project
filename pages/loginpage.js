@@ -1,19 +1,17 @@
 import { PlaceOrder } from "./placeorderpage"
 
-
 export class LoginPage
 {
 
     constructor(page)
     {
-        this.page = page 
+
+        this.page=page      
         this.loginlink = page.locator('#login2')
         this.lusername = page.locator('#loginusername')
         this.lpassword = page.locator('#loginpassword')
         this.loginbtn = page.locator("//button[text()='Log in']")
     }
-
-
 
  async accessurl()
    {

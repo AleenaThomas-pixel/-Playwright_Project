@@ -4,6 +4,7 @@ import { LoginPage } from "../pages/loginpage"
 import vdata from "../utils/validcredentials.json" with {type: "json"}
 import dataset from "../utils/invalidcredentials.json" with {type: "json"}
 
+//Test3
 test('Valid Login', async({page})=>
 {
 
@@ -19,6 +20,7 @@ await expect(page.locator('#nameofuser')).toBeVisible()
 
 })
 
+//Test4
 test('Invalid Login - invalid username valid password', async({page})=>
 {
 
@@ -41,6 +43,7 @@ await expect(page.locator('#login2')).toBeVisible()
 
 })
 
+//Test5
 test('Invalid Login- valid username invalid password', async({page})=>
 {
  
@@ -63,6 +66,7 @@ await expect(page.locator('#login2')).toBeVisible()
 
 })
 
+//Test6
 test('Invalid login - invalid username invalid password', async({page})=>
 {
   

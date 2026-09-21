@@ -4,6 +4,7 @@ import { SignUp } from "../pages/SignUpPage"
 
 import data from "../utils/signupcredentials.json" with {type:"json"}
 
+//Test1
 test('Sign Up - Click Sign up button ', async({page})=>
 {
 
@@ -43,6 +44,7 @@ await expect(page).toHaveURL("https://www.demoblaze.com")
 
 })
 
+//Test2
 test('SignUp - Click close button', async({page})=>
 {
     let signpge = new SignUp(page)
