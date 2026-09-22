@@ -53,6 +53,7 @@
 
     async selectproductnamePhones()
     {
+       await this.prdctnamePhone.waitFor({state: 'visible'})
        await this.prdctnamePhone.click() 
        return this
     }
