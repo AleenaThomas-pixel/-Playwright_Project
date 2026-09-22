@@ -17,6 +17,7 @@ test('Product - Laptop purchase ',{timeout:30000},async({customfixture})=>
    await loginpge.loginpassword(vdata.password)
    const pOrder = await loginpge.loginbutton() 
 
+   //await pOrder.selectproduct('Samsung galaxy s6'); 
    await pOrder.selectcategoryLaptop()
    await pOrder.selectproductnameLaptap()
 
@@ -75,14 +76,10 @@ test('Product - Monitors purchase ',{timeout:30000},async({page})=>
    await loginpge.loginusername(vdata.username)
    await loginpge.loginpassword(vdata.password)
    const pOrder = await loginpge.loginbutton() 
-   await page.pause()
 
    await pOrder.clearcart()
-   await page.pause()
    await pOrder.selectcategoryMonitors()
-   await page.pause()
    await pOrder.selectproductnameMonitors()
-   await page.pause()
 
    page.once('dialog',async dialog=>
     {
@@ -91,18 +88,12 @@ test('Product - Monitors purchase ',{timeout:30000},async({page})=>
         await dialog.accept()
     }
     )
-   await page.pause()
    await pOrder.addtocartbutton()
-   await page.pause()
    await pOrder.cart()
-   await page.pause()
    await pOrder.placeorderbutton()
-   await page.pause()
    //await page.waitForTimeout(40000)
    await pOrder.purchasedetails("Aloshy","India","Gurgaon","2221-XXXX-XXXX","OCT","2026")
-   await page.pause()
    await pOrder.purchaseorderbutton()   
-   await page.pause()
 
    await expect(page.locator('#nava')).toHaveText("PRODUCT STORE")  //assertion
    await pOrder.okbutton()

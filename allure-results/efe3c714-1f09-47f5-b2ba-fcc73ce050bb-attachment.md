@@ -1,0 +1,313 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Placeorder.spec.js >> Product - Monitors purchase 
+- Location: tests\Placeorder.spec.js:70:6
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByRole('link', { name: 'ASUS Full HD' })
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=f3e1]:
+  - text:             
+  - navigation [ref=f3e2]:
+    - link "PRODUCT STORE" [ref=f3e3] [cursor=pointer]:
+      - /url: index.html
+    - list [ref=f3e6]:
+      - listitem [ref=f3e7]:
+        - link "Home (current)" [ref=f3e8] [cursor=pointer]:
+          - /url: index.html
+          - text: Home
+          - generic [ref=f3e9]: (current)
+      - listitem [ref=f3e10]:
+        - link "Contact" [ref=f3e11] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=f3e12]:
+        - link "About us" [ref=f3e13] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=f3e14]:
+        - link "Cart" [ref=f3e15] [cursor=pointer]:
+          - /url: cart.html
+      - listitem
+      - listitem [ref=f3e16]:
+        - link "Log out" [ref=f3e17] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=f3e18]:
+        - link "Welcome aleenauser213" [ref=f3e19] [cursor=pointer]:
+          - /url: "#"
+      - listitem
+    - generic [ref=f3e21]:
+      - list [ref=f3e22]:
+        - listitem [ref=f3e23] [cursor=pointer]
+        - listitem [ref=f3e24] [cursor=pointer]
+        - listitem [ref=f3e25] [cursor=pointer]
+      - img "Second slide" [ref=f3e28]
+      - button "Previous" [ref=f3e29] [cursor=pointer]
+      - button "Next" [ref=f3e32] [cursor=pointer]
+  - generic [ref=f3e36]:
+    - generic [ref=f3e38]:
+      - link "CATEGORIES" [ref=f3e39] [cursor=pointer]:
+        - /url: ""
+      - link "Phones" [ref=f3e40] [cursor=pointer]:
+        - /url: "#"
+      - link "Laptops" [ref=f3e41] [cursor=pointer]:
+        - /url: "#"
+      - link "Monitors" [active] [ref=f3e42] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=f3e43]:
+      - generic [ref=f3e44]:
+        - generic [ref=f3e46]:
+          - link [ref=f3e47] [cursor=pointer]:
+            - /url: prod.html?idp_=1
+          - generic [ref=f3e48]:
+            - heading [level=4] [ref=f3e49]:
+              - link "Samsung galaxy s6" [ref=f3e50] [cursor=pointer]:
+                - /url: prod.html?idp_=1
+            - heading "$360" [level=5] [ref=f3e51]
+            - paragraph [ref=f3e52]: The Samsung Galaxy S6 is powered by 1.5GHz octa-core Samsung Exynos 7420 processor and it comes with 3GB of RAM. The phone packs 32GB of internal storage cannot be expanded.
+        - generic [ref=f3e54]:
+          - link [ref=f3e55] [cursor=pointer]:
+            - /url: prod.html?idp_=2
+          - generic [ref=f3e56]:
+            - heading [level=4] [ref=f3e57]:
+              - link "Nokia lumia 1520" [ref=f3e58] [cursor=pointer]:
+                - /url: prod.html?idp_=2
+            - heading "$820" [level=5] [ref=f3e59]
+            - paragraph [ref=f3e60]: The Nokia Lumia 1520 is powered by 2.2GHz quad-core Qualcomm Snapdragon 800 processor and it comes with 2GB of RAM.
+        - generic [ref=f3e62]:
+          - link [ref=f3e63] [cursor=pointer]:
+            - /url: prod.html?idp_=3
+          - generic [ref=f3e64]:
+            - heading [level=4] [ref=f3e65]:
+              - link "Nexus 6" [ref=f3e66] [cursor=pointer]:
+                - /url: prod.html?idp_=3
+            - heading "$650" [level=5] [ref=f3e67]
+            - paragraph [ref=f3e68]: The Motorola Google Nexus 6 is powered by 2.7GHz quad-core Qualcomm Snapdragon 805 processor and it comes with 3GB of RAM.
+        - generic [ref=f3e70]:
+          - link [ref=f3e71] [cursor=pointer]:
+            - /url: prod.html?idp_=4
+          - generic [ref=f3e72]:
+            - heading [level=4] [ref=f3e73]:
+              - link "Samsung galaxy s7" [ref=f3e74] [cursor=pointer]:
+                - /url: prod.html?idp_=4
+            - heading "$800" [level=5] [ref=f3e75]
+            - paragraph [ref=f3e76]: The Samsung Galaxy S7 is powered by 1.6GHz octa-core it comes with 4GB of RAM. The phone packs 32GB of internal storage that can be expanded up to 200GB via a microSD card.
+        - generic [ref=f3e78]:
+          - link [ref=f3e79] [cursor=pointer]:
+            - /url: prod.html?idp_=5
+          - generic [ref=f3e80]:
+            - heading [level=4] [ref=f3e81]:
+              - link "Iphone 6 32gb" [ref=f3e82] [cursor=pointer]:
+                - /url: prod.html?idp_=5
+            - heading "$790" [level=5] [ref=f3e83]
+            - paragraph [ref=f3e84]: It comes with 1GB of RAM. The phone packs 16GB of internal storage cannot be expanded. As far as the cameras are concerned, the Apple iPhone 6 packs a 8-megapixel primary camera on the rear and a 1.2-megapixel front shooter for selfies.
+        - generic [ref=f3e86]:
+          - link [ref=f3e87] [cursor=pointer]:
+            - /url: prod.html?idp_=6
+          - generic [ref=f3e88]:
+            - heading [level=4] [ref=f3e89]:
+              - link "Sony xperia z5" [ref=f3e90] [cursor=pointer]:
+                - /url: prod.html?idp_=6
+            - heading "$320" [level=5] [ref=f3e91]
+            - paragraph [ref=f3e92]: Sony Xperia Z5 Dual smartphone was launched in September 2015. The phone comes with a 5.20-inch touchscreen display with a resolution of 1080 pixels by 1920 pixels at a PPI of 424 pixels per inch.
+        - generic [ref=f3e94]:
+          - link [ref=f3e95] [cursor=pointer]:
+            - /url: prod.html?idp_=7
+          - generic [ref=f3e96]:
+            - heading [level=4] [ref=f3e97]:
+              - link "HTC One M9" [ref=f3e98] [cursor=pointer]:
+                - /url: prod.html?idp_=7
+            - heading "$700" [level=5] [ref=f3e99]
+            - paragraph [ref=f3e100]: The HTC One M9 is powered by 1.5GHz octa-core Qualcomm Snapdragon 810 processor and it comes with 3GB of RAM. The phone packs 32GB of internal storage that can be expanded up to 128GB via a microSD card.
+        - generic [ref=f3e102]:
+          - link [ref=f3e103] [cursor=pointer]:
+            - /url: prod.html?idp_=8
+          - generic [ref=f3e104]:
+            - heading [level=4] [ref=f3e105]:
+              - link "Sony vaio i5" [ref=f3e106] [cursor=pointer]:
+                - /url: prod.html?idp_=8
+            - heading "$790" [level=5] [ref=f3e107]
+            - paragraph [ref=f3e108]: Sony is so confident that the VAIO S is a superior ultraportable laptop that the company proudly compares the notebook to Apple's 13-inch MacBook Pro. And in a lot of ways this notebook is better, thanks to a lighter weight.
+        - generic [ref=f3e110]:
+          - link [ref=f3e111] [cursor=pointer]:
+            - /url: prod.html?idp_=9
+          - generic [ref=f3e112]:
+            - heading [level=4] [ref=f3e113]:
+              - link "Sony vaio i7" [ref=f3e114] [cursor=pointer]:
+                - /url: prod.html?idp_=9
+            - heading "$790" [level=5] [ref=f3e115]
+            - paragraph [ref=f3e116]: REVIEW Sony is so confident that the VAIO S is a superior ultraportable laptop that the company proudly compares the notebook to Apple's 13-inch MacBook Pro. And in a lot of ways this notebook is better, thanks to a lighter weight, higher-resolution display, more storage space, and a Blu-ray drive.
+      - list [ref=f3e118]:
+        - listitem [ref=f3e119]:
+          - button "Previous" [ref=f3e120]
+        - listitem [ref=f3e121]:
+          - button "Next" [ref=f3e122] [cursor=pointer]
+  - generic [ref=f3e124]:
+    - generic [ref=f3e127]:
+      - heading "About Us" [level=4] [ref=f3e128]
+      - paragraph [ref=f3e129]: We believe performance needs to be validated at every stage of the software development cycle and our open source compatible, massively scalable platform makes that a reality.
+    - generic [ref=f3e132]:
+      - heading "Get in Touch" [level=4] [ref=f3e133]
+      - paragraph [ref=f3e134]: "Address: 2390 El Camino Real"
+      - paragraph [ref=f3e135]: "Phone: +440 123456"
+      - paragraph [ref=f3e136]: "Email: demo@blazemeter.com"
+    - heading "PRODUCT STORE" [level=4] [ref=f3e140]
+  - contentinfo [ref=f3e142]:
+    - paragraph [ref=f3e143]: Copyright © Product Store
+```
+
+# Test source
+
+```ts
+  1   | //import { LogOutPage } from "./logoutpage"
+  2   | 
+  3   |  export class PlaceOrder
+  4   | {
+  5   | 
+  6   |     constructor(page)
+  7   |     {
+  8   |         this.page = page
+  9   |         this.categoryLaptop = page.locator("//a[text()='Laptops']")
+  10  |         this.prdctnamelap = page.getByRole('link',{name:'Sony vaio i5'})
+  11  |         this.categoryPhones = page.locator("//a[text()='Phones']")
+  12  |         this.prdctnamePhone = page.getByRole('link',{name:'Samsung galaxy s7'})
+  13  |         this.categoryMonitors = page.locator("//a[text()='Monitors']")
+  14  |         this.prdctnameMonitor = page.getByRole('link',{name:'ASUS Full HD'})
+  15  |         this.addtocartbtn = page.locator("//a[text()='Add to cart']")
+  16  |         this.crtLink = page.locator('#cartur')
+  17  |         this.placeorderbtn = page.locator("//button[text()='Place Order']")
+  18  |         this.purchasename = page.locator('#name')
+  19  |         this.purchaseco = page.locator('#country')
+  20  |         this.purchasecty = page.locator('#city')
+  21  |         this.purchasecc = page.locator('#card')
+  22  |         this.purchasemnth = page.locator('#month')
+  23  |         this.purchseyr = page.locator('#year')
+  24  |         this.purchasebtn = page.locator("//button[text()='Purchase']")
+  25  |         this.okbtn = page.locator("//button[text()='OK']")
+  26  |         this.placeordermodal = page.locator('#orderModal')
+  27  | 
+  28  |     }
+  29  | 
+  30  |     /*async selectproduct(product)
+  31  |    {
+  32  |     await this.page.locator(`//a[text()="${product}"]`).click();
+  33  |     return this
+  34  |    }   
+  35  |   */ 
+  36  |     async selectcategoryLaptop()
+  37  |     {
+  38  |        await this.categoryLaptop.click()
+  39  |        return this
+  40  |     }
+  41  | 
+  42  |     async selectproductnameLaptap()
+  43  |     {
+  44  |        await this.prdctnamelap.click()
+  45  |        return this
+  46  |     }
+  47  | 
+  48  |     async selectcategoryPhone()
+  49  |     {
+  50  |        await this.categoryPhones.click()
+  51  |        return this
+  52  |     }
+  53  | 
+  54  |     async selectproductnamePhones()
+  55  |     {
+  56  |        await this.prdctnamePhone.click() 
+  57  |        return this
+  58  |     }
+  59  | 
+  60  |     async selectcategoryMonitors()
+  61  |     {
+  62  |        await this.categoryMonitors.click()
+  63  |        //await this.prdctnameMonitor.waitFor({state: 'visible'})
+  64  |        return this
+  65  |     }
+  66  | 
+  67  |     async selectproductnameMonitors()
+  68  |     {
+> 69  |         await this.prdctnameMonitor.click()
+      |                                     ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  70  |         return this
+  71  |     }
+  72  | 
+  73  |     async addtocartbutton()
+  74  |     {
+  75  |         await this.addtocartbtn.click()
+  76  |         return this
+  77  |     }
+  78  |  
+  79  |     async cart()
+  80  |     {
+  81  |         await this.crtLink.click()
+  82  |         return this
+  83  |     }
+  84  | 
+  85  |     //to clear the existing product from cart
+  86  |     async clearcart()
+  87  |     {
+  88  |         await this.cart()
+  89  |         const Deletebtn = this.page.locator("//a[text() = 'Delete']")
+  90  |         while(await Deletebtn.count()>0)
+  91  |         {
+  92  |             await Deletebtn.first().click()
+  93  |             await this.page.waitForTimeout(500)
+  94  |         }
+  95  |         await this.page.getByText('PRODUCT STORE').click()
+  96  |         return this
+  97  |     }
+  98  | 
+  99  |     async placeorderbutton()
+  100 |     {
+  101 |         await this.placeorderbtn.click()
+  102 |         await this.placeordermodal.waitFor({ state: 'visible' })
+  103 |         return this
+  104 |     }
+  105 | 
+  106 |     async purchasedetails(name,country,city,card,month,year)
+  107 |     {
+  108 | 
+  109 |        await this.purchasename.fill(name)
+  110 |        await this.purchaseco.fill(country)
+  111 |        await this.purchasecty.fill(city)
+  112 |        await this.purchasecc.fill(card)
+  113 |        await this.purchasemnth.fill(month)
+  114 |        await this.purchseyr.fill(year)
+  115 |        return this
+  116 | 
+  117 |     }
+  118 | 
+  119 |     async purchaseorderbutton()
+  120 |     {
+  121 |         await this.purchasebtn.click()
+  122 |         return this
+  123 |     }
+  124 | 
+  125 |     async okbutton()
+  126 |     {
+  127 |         await this.okbtn.click()
+  128 |         //return new LogOutPage(this.page)
+  129 |         return this
+  130 |     }
+  131 | }
+  132 | 
+  133 | 
+```

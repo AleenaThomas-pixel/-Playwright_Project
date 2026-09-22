@@ -11,7 +11,7 @@
         this.categoryPhones = page.locator("//a[text()='Phones']")
         this.prdctnamePhone = page.getByRole('link',{name:'Samsung galaxy s7'})
         this.categoryMonitors = page.locator("//a[text()='Monitors']")
-        this.prdctnameMonitor = page.getByRole('link',{name:'ASUS Full HD'})
+        this.prdctnameMonitor = page.locator("//a[text() ='ASUS Full HD']")
         this.addtocartbtn = page.locator("//a[text()='Add to cart']")
         this.crtLink = page.locator('#cartur')
         this.placeorderbtn = page.locator("//button[text()='Place Order']")
@@ -60,12 +60,12 @@
     async selectcategoryMonitors()
     {
        await this.categoryMonitors.click()
-       await this.prdctnameMonitor.waitFor({state: 'visible'})
        return this
     }
 
     async selectproductnameMonitors()
     {
+        await this.prdctnameMonitor.waitFor({state: 'visible'})
         await this.prdctnameMonitor.click()
         return this
     }
@@ -99,13 +99,12 @@
     async placeorderbutton()
     {
         await this.placeorderbtn.click()
-        await this.placeordermodal.waitFor({ state: 'visible' })
+        //await this.placeordermodal.waitFor({ state: 'visible' })
         return this
     }
 
     async purchasedetails(name,country,city,card,month,year)
     {
-
        await this.purchasename.fill(name)
        await this.purchaseco.fill(country)
        await this.purchasecty.fill(city)
