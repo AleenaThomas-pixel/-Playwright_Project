@@ -1,6 +1,6 @@
 import{test,expect} from "@playwright/test"
 import { faker } from "@faker-js/faker"
-import { SignUp } from "../pages/SignUpPage"
+import { SignUp } from "../pages/signuppage"
 
 //import data from "../utils/signupcredentials.json" with {type:"json"}
 
